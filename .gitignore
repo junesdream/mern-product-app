@@ -14,3 +14,6 @@ yarn-error.log*
 # Ignore build files
 dist/
 build/
+
+# Ignore text.md under backend folder
+/backend/text.md
