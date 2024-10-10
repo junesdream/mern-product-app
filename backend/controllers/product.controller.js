@@ -14,6 +14,7 @@ export const getProduct = async (req, res) => {
 
 // Create a new product
 export const createProduct = async (req, res) => {
+
 	const product = req.body;
 
 	if (
@@ -79,3 +80,4 @@ export const deleteProduct = async (req, res) => {
 		res.status(500).json({ success: false, message: "Server Error" });
 	}
 };
+ 
