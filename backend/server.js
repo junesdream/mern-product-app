@@ -14,7 +14,11 @@ app.use(express.json()); // Middleware to parse JSON bodies
 app.use("/api/products", productRoutes);
 
 // Start the server and connect to the database
-app.listen(PORT, () => {
-	connectDB(); // Connect to MongoDB
-	console.log("Server started at http://localhost:" + PORT); // Log the server start
-});
+if (process.env.NODE_ENV !== "test") { 
+	app.listen(PORT, () => {
+		connectDB(); // Connect to MongoDB
+		console.log("Server started at http://localhost:" + PORT); // Log the server start
+	});
+}
+
+export default app; 
